@@ -1,8 +1,8 @@
-package Ejercicio1;
+package TpIntroduccion.ejercicio1;
 
 public class Ejercicio1 {
 
-    public static void main (String[] args) {
+    public static void mainEjer1 (String[] args) {
         int N = 9;
         double A = 3;
         char C = 'c';

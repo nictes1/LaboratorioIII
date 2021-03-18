@@ -1,4 +1,4 @@
-package Ejercicio7;
+package TpIntroduccion.ejercicio7;
 
 public class Ejercicio7 {
 
