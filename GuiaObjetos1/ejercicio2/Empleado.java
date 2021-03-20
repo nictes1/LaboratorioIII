@@ -49,7 +49,7 @@ public class Empleado {
     public void aumento(int porAumento){
        double aumento = ((salarioAnual() * porAumento) / 100);
        double aumentoTotal = aumento + salarioAnual();
-       System.out.println("Empleado- " + nombre + " " + apellido + ". Su salario anual con 15% de aumento es: " + aumentoTotal + ".");
+       System.out.println( "Empleado- " + nombre + " " + apellido + ". Su salario anual con 15% de aumento es: " + aumentoTotal + ".");
     }
 
     public void mostrarEmpleado(){

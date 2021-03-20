@@ -13,7 +13,7 @@ public class Ejer1 {
 
         rectangulo.setAncho(50);
         rectangulo.setAlto(60);
-        System.out.println("Perimetro: " + rectangulo.perimetro());
+        System.out.println( "Perimetro: " + rectangulo.perimetro());
         System.out.println("Area: " + rectangulo.area() );
 
     }

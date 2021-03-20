@@ -55,7 +55,7 @@ public class Item {
     }
 
     public void mostrarProducto(){
-        System.out.printf("Producto: Id: %d, Descripcion: %s, Cantidad: %d, Precio Unitario: %.2f, Precio Total: %.2f", getId(), getDescripcion(), getCantidad(), getPrecioUnitario(), precioTotal());
+        System.out.printf( "Producto: Id: %d, Descripcion: %s, Cantidad: %d, Precio Unitario: %.2f, Precio Total: %.2f", getId(), getDescripcion(), getCantidad(), getPrecioUnitario(), precioTotal());
     }
 
 }
