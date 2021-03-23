@@ -9,6 +9,12 @@ public class Banco {
     public Banco() {
     }
 
+    public Banco(double id, String nombre, double balance) {
+        this.id = id;
+        this.nombre = nombre;
+        this.balance = balance;
+    }
+
     public double getId() {
         return id;
     }
@@ -33,25 +39,26 @@ public class Banco {
         this.balance = balance;
     }
 
-    public double Credito(double deposito){
-        double credit = this.balance + deposito;
-        return credit;
+    public double credito(double deposito){
+        return this.balance = this.balance + deposito;
     }
 
-    public void Debito(double retiro){
-        double total = this.balance - retiro;
-        if(total >= 0){
-            System.out.printf("Retiro de dinero exitoso. \n");
+    public double debito(double retiro){
+
+        if(this.balance >= 0){
+            this.balance = this.balance - retiro;
         }else {
             System.out.printf("Fondos insuficientes.\n");
         }
+
+        return this.balance;
     }
 
-    public void MostrarCuenta(){
+    public void mostrarCuenta(){
         System.out.printf("Id: %.0f, Nombre: %s, Balance: %.0f \n", this.id, this.nombre, this.balance);
     }
 
-    public void Balance(){
+    public void balance(){
         System.out.printf("Su cuenta tiene $%.0f \n", this.balance);
     }
 

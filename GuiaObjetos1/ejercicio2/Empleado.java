@@ -9,6 +9,13 @@ public class Empleado {
     public Empleado() {
     }
 
+    public Empleado(String nombre, String apellido, int dni, double salario) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.salario = salario;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -41,19 +48,21 @@ public class Empleado {
         this.salario = salario;
     }
 
-    public double salarioAnual(){
-        this.salario = salario;
-        return salario * 12;
+    public double salarioAnual(){ return this.salario * 12; }
+
+    public void aumento(double porcentaje){
+        this.salario = this.salario + (this.salario * (porcentaje / 100));
+
     }
 
-    public void aumento(int porAumento){
-       double aumento = ((salarioAnual() * porAumento) / 100);
-       double aumentoTotal = aumento + salarioAnual();
-       System.out.println( "Empleado- " + nombre + " " + apellido + ". Su salario anual con 15% de aumento es: " + aumentoTotal + ".");
-    }
-
-    public void mostrarEmpleado(){
-        System.out.println("Empleado-  Dni: " + dni + " " + nombre + " " + apellido + " Salario: " + salario );
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", dni=" + dni +
+                ", salario=" + salario +
+                '}';
     }
 
 

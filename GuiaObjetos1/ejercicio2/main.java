@@ -23,10 +23,8 @@ public class main {
         emple2.setDni(34234123);
         emple2.setSalario(27500);
 
-        emple1.mostrarEmpleado();
-        emple2.mostrarEmpleado();
-
-
+        emple1.toString();
+        emple2.toString();
 
         double salarioEmple1 = emple1.salarioAnual();
         double salarioEmple2  =emple2.salarioAnual();

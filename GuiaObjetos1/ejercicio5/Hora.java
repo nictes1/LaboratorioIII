@@ -10,6 +10,13 @@ public class Hora {
     public Hora() {
     }
 
+    public Hora(int dia, int hora, int minuto, int segundo) {
+        this.dia = dia;
+        this.hora = hora;
+        this.minuto = minuto;
+        this.segundo = segundo;
+    }
+
     public int getDia() {
         return dia;
     }
@@ -18,9 +25,7 @@ public class Hora {
         this.dia = dia;
     }
 
-    public int getHora() {
-        return hora;
-    }
+    public int getHora() { return hora; }
 
     public void setHora(int hora) {
         this.hora = hora;

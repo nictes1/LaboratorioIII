@@ -17,8 +17,8 @@ public class main {
         producto.setId(91218);
         producto.setPrecioUnitario(301);
 
-        producto.mostrarProducto();
-        System.out.println("\nEl precio total del producto es: " + producto.precioTotal() );
+        producto.toString();
+        System.out.println("\nEl precio total del producto es: " + producto.precioTotal());
 
     }
 

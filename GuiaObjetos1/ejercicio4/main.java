@@ -10,16 +10,16 @@ public class main {
         cuenta.setNombre("Nicolas");
         cuenta.setBalance(15000);
 
-        cuenta.MostrarCuenta();
+        cuenta.mostrarCuenta();
 
-        cuenta.setBalance(cuenta.Credito(2500));
-        cuenta.Balance();
+        cuenta.setBalance(cuenta.credito(2500));
+        cuenta.balance();
 
-        cuenta.Debito(1500);
-        cuenta.Balance();
+        cuenta.debito(1500);
+        cuenta.balance();
 
-        cuenta.Debito(30000);
-        cuenta.Balance();
+        cuenta.debito(30000);
+        cuenta.balance();
 
 
 
