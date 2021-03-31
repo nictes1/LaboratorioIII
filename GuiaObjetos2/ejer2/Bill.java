@@ -1,13 +1,14 @@
 package GuiaObjetos2.ejer2;
 
-import java.sql.Time;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.UUID;
 
 public class Bill {
 
-    private String id;
+    private UUID id;
     private SaleItem []itemVenta;
-    private int totalAmount;
+    private double totalAmount;
     private LocalDate dates;
     private Client client;
 
@@ -15,35 +16,30 @@ public class Bill {
     }
 
 
-    public Bill(String id, SaleItem []itemVenta, int totalAmount, LocalDate dates, Client client) {
-        this.id = id;
+    public Bill(Client client, SaleItem[] itemVenta) {
+        this.id = UUID.randomUUID();
         this.itemVenta = itemVenta;
-        this.totalAmount = totalAmount;
-        this.dates = dates;
+        this.dates = LocalDate.now();
         this.client = client;
     }
 
     public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+        return id.toString();
     }
 
     public SaleItem[] getItemVenta() {
         return itemVenta;
     }
 
-    public void setItemVenta(SaleItem []itemVenta) {
+    public void setItemVenta(SaleItem[] itemVenta) {
         this.itemVenta = itemVenta;
     }
 
-    public int getTotalAmount() {
+    public double getTotalAmount() {
         return totalAmount;
     }
 
-    public void setTotalAmount(int totalAmount) {
+    public void setTotalAmount(double totalAmount) {
         this.totalAmount = totalAmount;
     }
 
@@ -68,10 +64,32 @@ public class Bill {
     public String toString() {
         return "Bill{" +
                 "id=" + id +
-                ", item= " + itemVenta +
+                ", item= " + Arrays.toString(itemVenta) +
                 ", totalAmount=" + totalAmount +
                 ", dates=" + dates +
                 ", client=" + client +
                 '}';
+    }
+
+    public String printBill(){
+        return "Factura A " + "\nNro: " + id + "\n Date: " + dates + "\nClient: " + client + "\n\nProducts: " + Arrays.toString(itemVenta)+ "\n\n Total price: $" + totalAmount() + "\t\t\t Total price with discount: $" + discount();
+    }
+
+    public double discount(){
+        double total = totalAmount();
+        if(total > 130){
+           return  total -= (total * (client.getPercentage() / 100));
+        }
+        return total;
+    }
+
+    public double totalAmount(){
+        double total = 0;
+        for(int i = 0; i < this.itemVenta.length; i++){
+            if(itemVenta != null){
+                 total = total + this.itemVenta[i].getUnitPrice();
+            }
+        }
+        return total;
     }
 }

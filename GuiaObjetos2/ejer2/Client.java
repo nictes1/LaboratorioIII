@@ -1,17 +1,26 @@
 package GuiaObjetos2.ejer2;
 
+import java.util.UUID;
+
 public class Client {
-    private String id; //compuesto por letras y numero
+    private UUID id;
     private String name;
     private String email;
     private double percentage;
 
-    public String getId() {
-        return id;
+    public Client() {
     }
 
-    public void setId(String id) {
-        this.id = id;
+
+    public Client(String name, String email, double percentage) {
+        this.id = UUID.randomUUID();
+        this.name = name;
+        this.email = email;
+        this.percentage = percentage;
+    }
+
+    public String getId() {
+        return id.toString();
     }
 
     public String getName() {
@@ -35,17 +44,6 @@ public class Client {
     }
 
     public void setPercentage(double percentage) {
-        this.percentage = percentage;
-    }
-
-    public Client() {
-    }
-
-
-    public Client(String id, String name, String email, double percentage) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
         this.percentage = percentage;
     }
 

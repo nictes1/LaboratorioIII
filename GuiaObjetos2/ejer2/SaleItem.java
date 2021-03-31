@@ -1,28 +1,26 @@
 package GuiaObjetos2.ejer2;
 
+import java.util.UUID;
+
 public class SaleItem {
 
-    private String Id;
+    private UUID Id;
     private String name;
-    private String descripcion;
-    private double precioUnitario;
+    private String description;
+    private double unitPrice;
 
     public SaleItem() {
     }
 
-    public SaleItem(String id, String name, String descripcion, double precioUnitario) {
-        Id = id;
+    public SaleItem(String name, String description, double precioUnitario) {
+        this.Id = UUID.randomUUID();
         this.name = name;
-        this.descripcion = descripcion;
-        this.precioUnitario = precioUnitario;
+        this.description = description;
+        this.unitPrice = precioUnitario;
     }
 
-    public String getId() {
+    public UUID getId() {
         return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
     }
 
     public String getName() {
@@ -33,21 +31,28 @@ public class SaleItem {
         this.name = name;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public double getPrecioUnitario() {
-        return precioUnitario;
+    public double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setPrecioUnitario(double precioUnitario) {
-        this.precioUnitario = precioUnitario;
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
 
+    @Override
+    public String toString() {
+        return  "\n Id:" + Id +
+                ", name: '" + name + '\'' +
+                ", description: '" + description + '\'' +
+                ", unitPrice: " + unitPrice + ".";
+    }
 }

@@ -1,5 +1,8 @@
 package GuiaObjetos2.ejer1;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Book {
 
     private String title;
@@ -56,7 +59,7 @@ public class Book {
                 "title='" + title + '\'' +
                 ", price=" + price +
                 ", stock=" + stock +
-                ", author=" + author +
+                ", author=" + Arrays.toString(author) +
                 '}';
     }
 

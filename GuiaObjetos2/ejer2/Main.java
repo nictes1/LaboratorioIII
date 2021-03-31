@@ -6,32 +6,22 @@ import java.util.UUID;
 public class Main {
 
     public static void main(String[] args){
+            //b)
+            Client clientNicolas = new Client("Nicolas","nikolastesone@gmail.com",20);
+            //d)
+            SaleItem Cookies = new SaleItem("Cookies", "Pepitos", 85);
+            SaleItem Soda = new SaleItem("Soda", "Coca-cola", 90);
+            SaleItem Cigarettes = new SaleItem("Cigarettes", "Marlboro", 130);
+            SaleItem Beer = new SaleItem("Beer", "Andes", 150);
 
-        UUID randIdClient = UUID.randomUUID();
-        String randIdStringClient = randIdClient.toString();
+            SaleItem[] items = new SaleItem[4];
+            items[0] = Cookies;
+            items[1] = Soda;
+            items[2] = Cigarettes;
+            items[3] = Beer;
 
-        UUID randIdBill = UUID.randomUUID();
-        String randIdStringBill = randIdBill.toString();
-
-        Client client = new Client();
-
-        //b)
-        client.setEmail("nikolastesone@gmail.com");
-        client.setName("Nicolas");
-        client.setId(randIdStringClient);
-        client.setPercentage(20);
-
-        System.out.println(client.toString());
-        //c)
-        Bill bill = new Bill();
-        bill.setClient(client);
-        bill.setDates(LocalDate.now());
-        bill.setTotalAmount(600);
-        bill.setId(randIdStringBill);
-
-        System.out.println(bill.toString());
-
-        //d)
+            Bill bill = new Bill(clientNicolas, items);
+            System.out.println(bill.printBill());
 
 
 
