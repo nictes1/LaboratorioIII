@@ -5,10 +5,15 @@ public class Cilindro extends Circle{
     private double altura = 1.0;
 
     public Cilindro() {
+        super();
     }
 
-    public Cilindro(double radius, String color, double altura) {
+    public Cilindro(double radius, String color) {
         super(radius, color);
+
+    }
+    public Cilindro(double radius, double altura) {
+        super(radius);
         this.altura = altura;
     }
 
@@ -20,9 +25,14 @@ public class Cilindro extends Circle{
         this.altura = altura;
     }
 
+    @Override
+    public double calculateArea() {
+        return ((2 * Math.PI * super.getRadius() * this.altura)+(2 * super.calculateArea()));
+    }
+
     public double calculateVolume(){
-      double volume = calculateArea() * this.altura;
-      return volume;
+
+      return calculateArea() * this.altura;
     }
 
     @Override

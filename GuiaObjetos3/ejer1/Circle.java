@@ -8,6 +8,10 @@ public class Circle {
     public Circle() {
     }
 
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
     public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
@@ -30,9 +34,7 @@ public class Circle {
     }
 
     public double calculateArea(){
-         double Area = 3.14 * (this.radius * this.radius);
-         return Area;
-
+         return Math.PI * (this.radius * this.radius);
     }
 
     @Override
