@@ -4,7 +4,6 @@ public class Circulo extends Caracteristicas{
 
     private double diametro;
     private final double pi = Math.PI;
-    private double radio = this.diametro/2;
 
     public Circulo(String color, double diametro) {
         super(color);
@@ -19,14 +18,22 @@ public class Circulo extends Caracteristicas{
         this.diametro = diametro;
     }
 
-
     public double getPi() {
         return pi;
     }
 
+    public double CalcularRadio(){
+        if(this.diametro != 0){
+            return diametro / 2;
+        }else{
+            System.out.println("Error al calular el radio del circulo, ingresa un numero mayor a '0'.");
+        }
+        return 0;
+    }
+
     public double CalcularPerimetro(){
         if(this.diametro != 0){
-          return (2 * this.pi) * this.radio;
+          return (2 * this.pi) * CalcularRadio();
         }else{
             System.out.println("Error al calular el perimetro del circulo, ingresa un numero mayor a '0'.");
         }
@@ -34,31 +41,18 @@ public class Circulo extends Caracteristicas{
     }
 
     public double CalcularArea(){
-        if(this.radio != 0){
-            return this.pi * (this.radio * this.radio);
+        if(CalcularRadio() != 0){
+            return this.pi * (CalcularRadio() * CalcularRadio());
         }else{
             System.out.println("Error al calular el area del circulo, ingresa un numero mayor a '0'");
         }
         return 0;
     }
 
-    private double area, perimetro;
-
-    public void setArea() {
-        this.area = CalcularArea();
-    }
-
-    public void setPerimetro() {
-        this.perimetro = CalcularPerimetro();
-    }
-
     @Override
     public String toString() {
-        return "Circulo{" +
-                "diametro=" + diametro +
-                ", radio=" + radio +
-                ", area=" + area +
-                ", perimetro=" + perimetro +
-                '}';
+        return "Circulo: Diametro=" + this.diametro + "Radio= "+ CalcularRadio() + "Area= "+ CalcularArea()+ "Perimetro= " + CalcularPerimetro() + "Color= " + super.getColor() ;
     }
+
+
 }

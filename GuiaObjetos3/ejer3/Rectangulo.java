@@ -51,23 +51,9 @@ public class Rectangulo extends Caracteristicas{
         return 0;
     }
 
-    private double area, perimetro;
-
-    public void setArea() {
-        this.area = CalcularArea();
-    }
-
-    public void setPerimetro() {
-        this.perimetro = CalcularPerimetro();
-    }
 
     @Override
     public String toString() {
-        return "Rectangulo{" +
-                "altura=" + altura +
-                ", base=" + base +
-                "Area=" + area +
-                ", Perimetro=" + perimetro +
-                '}';
+       return "Rectangulo: Altura= "+ this.altura + "Base= "+ this.base + "Area= "+ CalcularArea()+ "Perimetro= " + CalcularPerimetro() + "Color= " + super.getColor();
     }
 }

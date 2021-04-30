@@ -46,10 +46,6 @@ public class Cuadrado extends Caracteristicas {
 
     @Override
     public String toString() {
-        return "Cuadrado{" +
-                "lado=" + lado +
-                ", perimetro=" + perimetro +
-                ", area =" + area +
-                '}';
+        return "Cuadrado: Lado="+ this.lado +"Area= "+ CalcularArea()+ "Perimetro= " + CalcularPerimetro() + "Color= " + super.getColor() ;
     }
 }
