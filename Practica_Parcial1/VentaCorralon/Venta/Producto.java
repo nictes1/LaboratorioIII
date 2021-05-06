@@ -1,4 +1,4 @@
-package Practica_Parcial1.VentaCorralon.Publico;
+package Practica_Parcial1.VentaCorralon.Venta;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -7,7 +7,7 @@ public class Producto {
     private String nombre, marca;
     private int precioUnitario, stock;
 
-    private static AtomicInteger count = new AtomicInteger(1);
+    private static final AtomicInteger count = new AtomicInteger(1);
 
 
     public Producto(String nombre, String marca, int precioUnitario, int stock) {

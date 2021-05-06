@@ -1,4 +1,4 @@
-package Practica_Parcial1.VentaCorralon.Publico;
+package Practica_Parcial1.VentaCorralon.Venta;
 
 import java.util.ArrayList;
 import java.util.List;
